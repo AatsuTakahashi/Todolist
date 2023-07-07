@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "../../styles/components/layouts/Header.module.css"
 import Image from "next/image"; 
+import { signOut } from "next-auth/react";
 
 export const Header = () => {
     return (
@@ -17,9 +18,9 @@ export const Header = () => {
                 />
                 <p className={styles.headerContentItem}>Todo リスト</p>
             </div>   
-            <Link className={styles.headerLogin} href={''}>
-                ログイン
-            </Link>
+            <div className={styles.headerLogin} onClick={() => signOut({ callbackUrl: "/sign_in" })}>
+                ログアウト
+            </div>
         </div>
       </header>
     )

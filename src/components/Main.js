@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import dummyData from '@/pages/dummyData';
+import dummyData from '../pages/dummyData';
 import styles from "../styles/components/layouts/Main.module.css";
 import Card from './Card';
 
