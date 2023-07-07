@@ -38,4 +38,15 @@ model User {
   emailVerified DateTime?
   image         String?
   accounts      Account[]
+  todos         Todo[] 
+}
+
+model Todo {
+  id String    @id @default(cuid())
+  todo String
+  created_at String
+  user_id String
+  user   User   @relation(fields: [user_id], references: [id])
+
+  @@index([user_id])
 }
